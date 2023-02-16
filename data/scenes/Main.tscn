@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://data/scenes/Game.tscn" type="PackedScene" id=1]
 [ext_resource path="res://data/shader/OrderedDither.tres" type="Shader" id=2]
+[ext_resource path="res://NOKIA3310.png" type="Texture" id=3]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -17,9 +18,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 stretch_shrink = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 84, 48 )
@@ -29,3 +27,137 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Game" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+margin_left = 944.0
+margin_top = 190.0
+margin_right = 1678.0
+margin_bottom = 819.0
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "[u][color=red]Delete this InfoLabel Node when not needed anymore[/color][/u]
+
+[color=teal]InputMap:[/color]
+Twelve actions were added to the InputMap: [color=silver]nokia_0[/color] up to [color=silver]nokia_9[/color], [color=silver]nokia_*[/color] and [color=silver]nokia_#[/color]
+By default they are mapped to keypad keys from 0 to 9, right arrow as [color=silver][*][/color] and period (dot) as [color=silver][#][/color]
+[right]Look at this Nokia photo for layout reference ----->[/right]
+
+All keypads should have the same 1 to 9 keys layout but the three lowest buttons may change across different manufacturers
+
+Feel free to modify these default mappings and add more buttons to each action to better suit your game
+(Each action can have multiple keys, so you could make, for example, [color=silver]nokia_5[/color] be also tied to space bar and X on a controller)
+
+
+[color=teal]Audio:[/color]
+A singleton named [color=silver]AudioManager[/color] and a few AudioBuses were added. It's a simple system that makes sure the music and sound effects don't overlap (Nokia 3310 has only one audio channel)
+Check its script at [url=\"res://data/autoload/AudioManager.gd\"]res://data/autoload/AudioManager.gd[/url]
+
+
+[color=teal]Shader:[/color]
+The [color=silver]ViewportContainer[/color] node has a ShaderMaterial applied. It limits the number of colors the Viewport has and automatically dithers the colors inbetween. Just make your game black and white and the shader deals with the rest. You can change the shader parameters to make it use different colors.
+[right]Color palette reference ----->[/right]
+
+[color=teal]Modified project settings:[/color]
+[color=silver]boot_splash/image[/color] (with [color=silver]use_filter[/color] disabled) changed to a custom image
+
+[color=silver]settings/fps/force_fps[/color] set to [color=silver]15[/color] because that's the Nokia's screen refreshing rate
+
+[color=silver]window/size[/color]: width and height set to [color=silver]840x480[/color]
+[color=silver]window/stretch/mode[/color] set to \"viewport\"
+[color=silver]window/stretch/aspect[/color] set to \"keep\"
+These settings make the game run at a constant resolution, even when the window is resized
+
+This scene contains a [color=silver]Viewport[/color] with [color=silver]size = (84, 48)[/color] inside a [color=silver]ViewportContainer[/color] with [color=silver]strech_shrink = 10[/color]
+This makes the [color=silver]Game.tscn[/color] scene run at a resolution of [color=silver]84x48[/color]. The [color=silver]ViewportContainer[/color] streches it ten times, so the windows's resolution was set to [color=silver]840x480[/color]
+(Change these values around if you want to make a portrait mode game)
+
+[color=silver]quality/driver/driver_name[/color] set to [color=silver]GLES2[/color] because we don't need higher quality graphics
+[color=silver]quality/filters/use_nearest_mipmap_filter[/color] set to [color=silver]true[/color]
+[color=silver]environment/default_clear_color[/color] set to [color=silver]black[/color]"
+text = "Delete this InfoLabel Node when not needed anymore
+
+InputMap:
+Twelve actions were added to the InputMap: nokia_0 up to nokia_9, nokia_* and nokia_#
+By default they are mapped to keypad keys from 0 to 9, right arrow as [*] and period (dot) as [#]
+Look at this Nokia photo for layout reference ----->
+
+All keypads should have the same 1 to 9 keys layout but the three lowest buttons may change across different manufacturers
+
+Feel free to modify these default mappings and add more buttons to each action to better suit your game
+(Each action can have multiple keys, so you could make, for example, nokia_5 be also tied to space bar and X on a controller)
+
+
+Audio:
+A singleton named AudioManager and a few AudioBuses were added. It's a simple system that makes sure the music and sound effects don't overlap (Nokia 3310 has only one audio channel)
+Check its script at res://data/autoload/AudioManager.gd
+
+
+Shader:
+The ViewportContainer node has a ShaderMaterial applied. It limits the number of colors the Viewport has and automatically dithers the colors inbetween. Just make your game black and white and the shader deals with the rest. You can change the shader parameters to make it use different colors.
+Color palette reference ----->
+
+Modified project settings:
+boot_splash/image (with use_filter disabled) changed to a custom image
+
+settings/fps/force_fps set to 15 because that's the Nokia's screen refreshing rate
+
+window/size: width and height set to 840x480
+window/stretch/mode set to \"viewport\"
+window/stretch/aspect set to \"keep\"
+These settings make the game run at a constant resolution, even when the window is resized
+
+This scene contains a Viewport with size = (84, 48) inside a ViewportContainer with strech_shrink = 10
+This makes the Game.tscn scene run at a resolution of 84x48. The ViewportContainer streches it ten times, so the windows's resolution was set to 840x480
+(Change these values around if you want to make a portrait mode game)
+
+quality/driver/driver_name set to GLES2 because we don't need higher quality graphics
+quality/filters/use_nearest_mipmap_filter set to true
+environment/default_clear_color set to black"
+scroll_active = false
+
+[node name="Nokia3310" type="Sprite" parent="InfoLabel"]
+position = Vector2( 867, 68 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="PaletteRect1" type="ColorRect" parent="InfoLabel"]
+margin_left = 786.0
+margin_top = 342.0
+margin_right = 826.0
+margin_bottom = 382.0
+color = Color( 0.780392, 0.941176, 0.847059, 1 )
+
+[node name="PaletteRect2" type="ColorRect" parent="InfoLabel"]
+margin_left = 786.0
+margin_top = 382.0
+margin_right = 826.0
+margin_bottom = 422.0
+color = Color( 0.262745, 0.321569, 0.239216, 1 )
+
+[node name="PaletteRect3" type="ColorRect" parent="InfoLabel"]
+margin_left = 846.0
+margin_top = 342.0
+margin_right = 886.0
+margin_bottom = 382.0
+color = Color( 0.607843, 0.780392, 0, 1 )
+
+[node name="PaletteRect4" type="ColorRect" parent="InfoLabel"]
+margin_left = 846.0
+margin_top = 382.0
+margin_right = 886.0
+margin_bottom = 422.0
+color = Color( 0.168627, 0.247059, 0.0352941, 1 )
+
+[node name="PaletteRect5" type="ColorRect" parent="InfoLabel"]
+margin_left = 906.0
+margin_top = 342.0
+margin_right = 946.0
+margin_bottom = 382.0
+color = Color( 0.529412, 0.568627, 0.533333, 1 )
+
+[node name="PaletteRect6" type="ColorRect" parent="InfoLabel"]
+margin_left = 906.0
+margin_top = 382.0
+margin_right = 946.0
+margin_bottom = 422.0
+color = Color( 0.101961, 0.0980392, 0.0784314, 1 )

@@ -1,20 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://data/sprites/worker.png" type="Texture" id=1]
+[ext_resource path="res://data/fonts/FFFFORWA.tres" type="DynamicFont" id=2]
 [ext_resource path="res://data/scenes/Sprite.gd" type="Script" id=3]
 [ext_resource path="res://data/scenes/Game.gd" type="Script" id=4]
 [ext_resource path="res://data/scenes/3DTest.tscn" type="PackedScene" id=5]
 
-[sub_resource type="DynamicFontData" id=1]
-antialiased = false
-font_path = "res://data/fonts/FFFFORWA.TTF"
-
-[sub_resource type="DynamicFont" id=2]
-size = 8
-font_data = SubResource( 1 )
-
 [sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+default_font = ExtResource( 2 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "New Anim"
@@ -40,9 +33,6 @@ script = ExtResource( 4 )
 margin_right = 84.0
 margin_bottom = 48.0
 theme = SubResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 anchor_right = 1.0
@@ -95,9 +85,6 @@ bbcode_text = "
  [wave amp=30 freq=5]3310[/wave]"
 text = "
  3310"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="UI"]
 position = Vector2( 8, 37 )
@@ -110,9 +97,6 @@ script = ExtResource( 3 )
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 margin_right = 84.0
 margin_bottom = 48.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 84, 48 )

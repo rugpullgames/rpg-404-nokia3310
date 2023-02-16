@@ -101,6 +101,7 @@ uniform vec4 ColorDark : hint_color;
 uniform vec3 ScreenSize;
 uniform sampler2D tex_frg_17;
 
+
 // GlobalExpression:0
 	const mat4 thresholdMap = mat4(
 	    vec4(0.0, 12.0, 3.0, 15.0), 
@@ -164,7 +165,7 @@ void fragment() {
 	vec3 n_out4p0;
 	float n_out4p1;
 	{
-		vec4 _tex_read = texture( TEXTURE , UV.xy );
+		vec4 _tex_read = texture(TEXTURE , UV.xy);
 		n_out4p0 = _tex_read.rgb;
 		n_out4p1 = _tex_read.a;
 	}
@@ -175,62 +176,49 @@ void fragment() {
 		vec3 c = n_out4p0;
 		float max1 = max(c.r, c.g);
 		float max2 = max(max1, c.b);
-		float max3 = max(max1, max2);
-		n_out22p0 = vec3(max3, max3, max3);
+		n_out22p0 = vec3(max2, max2, max2);
 	}
 
 // ColorUniform:15
-	vec3 n_out15p0;
-	float n_out15p1;
-	n_out15p0 = ColorLight.rgb;
-	n_out15p1 = ColorLight.a;
+	vec3 n_out15p0 = ColorLight.rgb;
+	float n_out15p1 = ColorLight.a;
 
 // ColorUniform:16
-	vec3 n_out16p0;
-	float n_out16p1;
-	n_out16p0 = ColorDark.rgb;
-	n_out16p1 = ColorDark.a;
+	vec3 n_out16p0 = ColorDark.rgb;
+	float n_out16p1 = ColorDark.a;
 
 // Input:24
-	vec3 n_out24p0;
-	n_out24p0 = vec3(UV,0.0);
+	vec3 n_out24p0 = vec3(UV, 0.0);
 
 // VectorUniform:25
-	vec3 n_out25p0;
-	n_out25p0 = ScreenSize;
+	vec3 n_out25p0 = ScreenSize;
 
 // VectorOp:23
-	vec3 n_out23p0;
-	n_out23p0 = n_out24p0 * n_out25p0;
+	vec3 n_out23p0 = n_out24p0 * n_out25p0;
 
 // VectorOp:26
-	vec3 n_in26p1 = vec3(4.00000,4.00000,4.00000);
-	vec3 n_out26p0;
-	n_out26p0 = n_out23p0 / n_in26p1;
+	vec3 n_in26p1 = vec3(4.00000, 4.00000, 4.00000);
+	vec3 n_out26p0 = n_out23p0 / n_in26p1;
 
 // Texture:17
-	vec3 n_out17p0;
-	float n_out17p1;
-	vec4 tex_frg_17_read = texture( tex_frg_17 , n_out26p0.xy );
-	n_out17p0 = tex_frg_17_read.rgb;
-	n_out17p1 = tex_frg_17_read.a;
+	vec4 tex_frg_17_read = texture(tex_frg_17, n_out26p0.xy);
+	vec3 n_out17p0 = tex_frg_17_read.rgb;
+	float n_out17p1 = tex_frg_17_read.a;
 
 // VectorDecompose:19
-	float n_out19p0;
-	float n_out19p1;
-	float n_out19p2;
-	n_out19p0 = n_out17p0.x;
-	n_out19p1 = n_out17p0.y;
-	n_out19p2 = n_out17p0.z;
+	float n_out19p0 = n_out17p0.x;
+	float n_out19p1 = n_out17p0.y;
+	float n_out19p2 = n_out17p0.z;
 
 // Expression:11
 	vec3 n_out11p0;
-	n_out11p0=vec3(0.0, 0.0, 0.0);
+	n_out11p0 = vec3(0.0, 0.0, 0.0);
 	{
 		// the value 0.9375 results when comparing intensity * 16.0 > n_out19p0 * 15.0
 		// we just use 15.0 / 16.0 instead
 		n_out11p0.rgb = (n_out22p0.r > n_out19p0 * 0.9375) ? n_out15p0 : n_out16p0;
 	}
+
 // Output:0
 	COLOR.rgb = n_out11p0;
 
