@@ -32,7 +32,7 @@ render_target_update_mode = 3
 margin_left = 944.0
 margin_top = 190.0
 margin_right = 1678.0
-margin_bottom = 819.0
+margin_bottom = 885.0
 rect_clip_content = false
 bbcode_enabled = true
 bbcode_text = "[u][color=red]Delete this InfoLabel Node when not needed anymore[/color][/u]
@@ -67,13 +67,13 @@ The [color=silver]ViewportContainer[/color] node has a ShaderMaterial applied. I
 [color=silver]window/stretch/aspect[/color] set to \"keep\"
 These settings make the game run at a constant resolution, even when the window is resized
 
-This scene contains a [color=silver]Viewport[/color] with [color=silver]size = (84, 48)[/color] inside a [color=silver]ViewportContainer[/color] with [color=silver]strech_shrink = 10[/color]
-This makes the [color=silver]Game.tscn[/color] scene run at a resolution of [color=silver]84x48[/color]. The [color=silver]ViewportContainer[/color] streches it ten times, so the windows's resolution was set to [color=silver]840x480[/color]
-(Change these values around if you want to make a portrait mode game)
-
 [color=silver]quality/driver/driver_name[/color] set to [color=silver]GLES2[/color] because we don't need higher quality graphics
 [color=silver]quality/filters/use_nearest_mipmap_filter[/color] set to [color=silver]true[/color]
-[color=silver]environment/default_clear_color[/color] set to [color=silver]black[/color]"
+[color=silver]environment/default_clear_color[/color] set to [color=silver]black[/color]
+
+This scene contains a [color=silver]Viewport[/color] with [color=silver]size = (84, 48)[/color] inside a [color=silver]ViewportContainer[/color] with [color=silver]strech_shrink = 10[/color]
+This makes the [color=silver]Game.tscn[/color] scene run at a resolution of [color=silver]84x48[/color]. The [color=silver]ViewportContainer[/color] streches it ten times, so the windows's resolution was set to [color=silver]840x480[/color]
+[color=teal](If you want to make a portrait mode game change these values around and also the [color=blue]ScreenSize[/color] parameter in the dither shader)[/color]"
 text = "Delete this InfoLabel Node when not needed anymore
 
 InputMap:
@@ -106,13 +106,13 @@ window/stretch/mode set to \"viewport\"
 window/stretch/aspect set to \"keep\"
 These settings make the game run at a constant resolution, even when the window is resized
 
-This scene contains a Viewport with size = (84, 48) inside a ViewportContainer with strech_shrink = 10
-This makes the Game.tscn scene run at a resolution of 84x48. The ViewportContainer streches it ten times, so the windows's resolution was set to 840x480
-(Change these values around if you want to make a portrait mode game)
-
 quality/driver/driver_name set to GLES2 because we don't need higher quality graphics
 quality/filters/use_nearest_mipmap_filter set to true
-environment/default_clear_color set to black"
+environment/default_clear_color set to black
+
+This scene contains a Viewport with size = (84, 48) inside a ViewportContainer with strech_shrink = 10
+This makes the Game.tscn scene run at a resolution of 84x48. The ViewportContainer streches it ten times, so the windows's resolution was set to 840x480
+(If you want to make a portrait mode game change these values around and also the ScreenSize parameter in the dither shader)"
 scroll_active = false
 
 [node name="Nokia3310" type="Sprite" parent="InfoLabel"]
