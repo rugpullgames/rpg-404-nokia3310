@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/blue_bow_flower_03.png-63f10989b116a647ce5bb55bd46a2714.res"
+group_file="res://texture/atlas/barrier/blue_bow_flower.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/blue_bow_flower/blue_bow_flower_03.png"
+dest_files=[ "res://.import/blue_bow_flower_03.png-63f10989b116a647ce5bb55bd46a2714.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/blue_bow_flower.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

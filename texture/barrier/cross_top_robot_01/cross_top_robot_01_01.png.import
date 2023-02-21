@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cross_top_robot_01_01.png-97a853d690c8c22e121da91f344a3212.res"
+group_file="res://texture/atlas/barrier/cross_top_robot_01.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cross_top_robot_01/cross_top_robot_01_01.png"
+dest_files=[ "res://.import/cross_top_robot_01_01.png-97a853d690c8c22e121da91f344a3212.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cross_top_robot_01.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

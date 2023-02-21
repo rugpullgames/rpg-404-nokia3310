@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cube_pink_02.png-5cc4ded10453ed946ce8c89cf5f9489e.res"
+group_file="res://texture/atlas/barrier/cube_pink.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cube_pink/cube_pink_02.png"
+dest_files=[ "res://.import/cube_pink_02.png-5cc4ded10453ed946ce8c89cf5f9489e.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cube_pink.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/chimney_01.png-d8d178e7cf57b3684461f508baf4b87f.res"
+group_file="res://texture/atlas/barrier/chimney.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/chimney/chimney_01.png"
+dest_files=[ "res://.import/chimney_01.png-d8d178e7cf57b3684461f508baf4b87f.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/chimney.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

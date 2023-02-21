@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cube_yellow_01_03.png-c0e90a7b9cb2eebf9208a0f888370df5.res"
+group_file="res://texture/atlas/barrier/cube_yellow_01.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cube_yellow_01/cube_yellow_01_03.png"
+dest_files=[ "res://.import/cube_yellow_01_03.png-c0e90a7b9cb2eebf9208a0f888370df5.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cube_yellow_01.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

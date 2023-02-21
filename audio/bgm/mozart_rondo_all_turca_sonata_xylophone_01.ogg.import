@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mozart_rondo_all_turca_sonata_xylophone_01.ogg-4b9c07595540cff76018ca2131566b45.oggstr"
+
+[deps]
+
+source_file="res://audio/bgm/mozart_rondo_all_turca_sonata_xylophone_01.ogg"
+dest_files=[ "res://.import/mozart_rondo_all_turca_sonata_xylophone_01.ogg-4b9c07595540cff76018ca2131566b45.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

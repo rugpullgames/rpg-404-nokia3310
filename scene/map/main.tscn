@@ -1,0 +1,358 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://script/floor/base_floor.gd" type="Script" id=1]
+[ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
+[ext_resource path="res://scene/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://texture/foreground/base_floor.png" type="Texture" id=4]
+[ext_resource path="res://script/sky/sky.gd" type="Script" id=5]
+[ext_resource path="res://scene/sky/cloud.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scene/sky/star.tscn" type="PackedScene" id=7]
+[ext_resource path="res://texture/logo/godot_icon.svg" type="Texture" id=8]
+[ext_resource path="res://script/ui/ui_score.gd" type="Script" id=9]
+[ext_resource path="res://script/barrier/barrier_spawner.gd" type="Script" id=10]
+[ext_resource path="res://scene/barrier/barrier.tscn" type="PackedScene" id=11]
+[ext_resource path="res://script/floor/floors.gd" type="Script" id=12]
+[ext_resource path="res://scene/floor/floor.tscn" type="PackedScene" id=13]
+[ext_resource path="res://audio/bgm/mute.ogg" type="AudioStream" id=14]
+[ext_resource path="res://theme/rpg404_theme.tres" type="Theme" id=15]
+[ext_resource path="res://texture/logo/rpg_logo.png" type="Texture" id=16]
+[ext_resource path="res://script/manager/audio.gd" type="Script" id=17]
+[ext_resource path="res://texture/ui/btn_game_restart.png" type="Texture" id=18]
+[ext_resource path="res://script/ui/ui_end.gd" type="Script" id=19]
+[ext_resource path="res://texture/ui/btn_game_select_nft.png" type="Texture" id=20]
+[ext_resource path="res://texture/ui/btn_share_twitter.png" type="Texture" id=21]
+[ext_resource path="res://script/pet/pet_spawner.gd" type="Script" id=22]
+[ext_resource path="res://texture/ui/btn_game_bgm_on.png" type="Texture" id=23]
+[ext_resource path="res://texture/ui/btn_game_sfx_on.png" type="Texture" id=24]
+[ext_resource path="res://scene/effect/boom.tscn" type="PackedScene" id=25]
+[ext_resource path="res://script/manager/audio_loader.gd" type="Script" id=26]
+[ext_resource path="res://texture/effect/boom/boom_effect_0006.png" type="Texture" id=27]
+[ext_resource path="res://texture/effect/boom/boom_effect_0004.png" type="Texture" id=28]
+[ext_resource path="res://texture/effect/boom/boom_effect_0003.png" type="Texture" id=29]
+[ext_resource path="res://texture/effect/boom/boom_effect_0005.png" type="Texture" id=30]
+[ext_resource path="res://texture/effect/boom/boom_effect_0002.png" type="Texture" id=31]
+[ext_resource path="res://texture/effect/boom/boom_effect_0001.png" type="Texture" id=32]
+[ext_resource path="res://script/manager/share.gd" type="Script" id=33]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 150.125, 31 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "boom",
+"speed": 30.0
+} ]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Game" type="CanvasLayer" parent="."]
+
+[node name="ScoreMarker" type="Node2D" parent="Game"]
+
+[node name="SkyColor" type="ColorRect" parent="Game"]
+margin_right = 900.0
+margin_bottom = 300.0
+color = Color( 0.372549, 0.690196, 0.729412, 1 )
+script = ExtResource( 5 )
+
+[node name="Stars" type="Node" parent="Game/SkyColor"]
+
+[node name="Star1" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+
+[node name="Star2" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+
+[node name="Star3" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+
+[node name="Star4" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+
+[node name="Star5" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+
+[node name="Cloud1" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 120, -2 )
+z_index = 2
+
+[node name="Cloud2" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 120, -2 )
+z_index = 2
+
+[node name="Cloud3" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="Cloud4" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="Cloud5" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="Cloud6" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="Cloud7" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="Cloud8" parent="Game/SkyColor" instance=ExtResource( 6 )]
+position = Vector2( 1768, -8 )
+z_index = 2
+
+[node name="BaseFloor" type="StaticBody2D" parent="Game"]
+position = Vector2( 450, 270 )
+scale = Vector2( 4, 1 )
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="SprBaseFloor" type="Sprite" parent="Game/BaseFloor"]
+position = Vector2( 0, -270 )
+z_index = 10
+texture = ExtResource( 4 )
+offset = Vector2( 0, 150 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/BaseFloor"]
+shape = SubResource( 1 )
+
+[node name="Barriers" type="Node" parent="Game"]
+script = ExtResource( 10 )
+
+[node name="Barrier1" parent="Game/Barriers" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000, 240 )
+z_index = 10
+
+[node name="Barrier2" parent="Game/Barriers" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000, 240 )
+z_index = 10
+
+[node name="Barrier3" parent="Game/Barriers" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000, 240 )
+z_index = 10
+
+[node name="Barrier4" parent="Game/Barriers" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000, 240 )
+z_index = 10
+
+[node name="Barrier5" parent="Game/Barriers" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 1000, 240 )
+z_index = 10
+
+[node name="Pets" type="Node" parent="Game"]
+script = ExtResource( 22 )
+path_to_boom_effect = NodePath("../Boom")
+
+[node name="Floors" type="Node2D" parent="Game"]
+script = ExtResource( 12 )
+
+[node name="Floor1" parent="Game/Floors" instance=ExtResource( 13 )]
+
+[node name="Floor2" parent="Game/Floors" instance=ExtResource( 13 )]
+
+[node name="Floor3" parent="Game/Floors" instance=ExtResource( 13 )]
+
+[node name="Floor4" parent="Game/Floors" instance=ExtResource( 13 )]
+
+[node name="Player" parent="Game" instance=ExtResource( 3 )]
+position = Vector2( 180, 150 )
+z_index = 20
+collision_layer = 2
+collision_mask = 12
+
+[node name="Boom" parent="Game" instance=ExtResource( 25 )]
+position = Vector2( 0, -100 )
+z_index = 19
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -380.0
+margin_top = 20.0
+margin_right = -200.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2, 2 )
+size_flags_horizontal = 5
+theme = ExtResource( 15 )
+text = "RPG 404"
+align = 2
+uppercase = true
+script = ExtResource( 9 )
+
+[node name="UIEnd" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 15 )
+script = ExtResource( 19 )
+
+[node name="BtnRestart" type="Button" parent="UI/UIEnd"]
+margin_left = 500.0
+margin_top = 80.0
+margin_right = 600.0
+margin_bottom = 180.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 15 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 18 )
+flat = true
+expand_icon = true
+
+[node name="BtnSelect" type="Button" parent="UI/UIEnd"]
+margin_left = 640.0
+margin_top = 80.0
+margin_right = 740.0
+margin_bottom = 180.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 15 )
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 20 )
+flat = true
+expand_icon = true
+
+[node name="BtnShare" type="Button" parent="UI/UIEnd"]
+margin_left = 780.0
+margin_top = 100.0
+margin_right = 840.0
+margin_bottom = 160.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+icon = ExtResource( 21 )
+flat = true
+expand_icon = true
+script = ExtResource( 33 )
+
+[node name="BtnEffect" type="AnimatedSprite" parent="UI/UIEnd/BtnShare"]
+position = Vector2( 30, 30 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+frames = SubResource( 2 )
+animation = "boom"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="UI/UIEnd/BtnShare"]
+
+[node name="BtnCopyright" type="Button" parent="UI/UIEnd"]
+margin_left = 50.0
+margin_top = 268.0
+margin_right = 350.0
+margin_bottom = 298.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "© Rug Pull Games"
+flat = true
+clip_text = true
+align = 0
+
+[node name="RPGLogo" type="Sprite" parent="UI/UIEnd/BtnCopyright"]
+position = Vector2( -20, 2 )
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 16 )
+
+[node name="RPG404" type="Label" parent="UI/UIEnd/BtnCopyright"]
+margin_left = 8.0
+margin_top = -30.0
+margin_right = 308.0
+text = "RPG 404"
+valign = 2
+
+[node name="BtnGodot" type="Button" parent="UI/UIEnd"]
+margin_left = 360.0
+margin_top = 268.0
+margin_right = 660.0
+margin_bottom = 298.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+action_mode = 0
+enabled_focus_mode = 0
+text = "Made by Godot Engine"
+flat = true
+
+[node name="GodotLogo" type="Sprite" parent="UI/UIEnd/BtnGodot"]
+position = Vector2( -20, 2 )
+scale = Vector2( 0.04, 0.04 )
+texture = ExtResource( 8 )
+
+[node name="Version" type="Label" parent="UI/UIEnd/BtnGodot"]
+margin_left = 6.0
+margin_top = -30.0
+margin_right = 310.0
+text = "Game v.0.0.0.000000"
+valign = 2
+
+[node name="Audio" type="Control" parent="UI/UIEnd"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 17 )
+path_to_bgm = NodePath("../../../BGM")
+
+[node name="AudioLoader" type="Node" parent="UI/UIEnd/Audio"]
+script = ExtResource( 26 )
+
+[node name="BtnBgmAudio" type="Button" parent="UI/UIEnd/Audio"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 740.0
+margin_top = 200.0
+margin_right = 800.0
+margin_bottom = 260.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 15 )
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 23 )
+flat = true
+expand_icon = true
+
+[node name="BtnSfxAudio" type="Button" parent="UI/UIEnd/Audio"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 800.0
+margin_top = 200.0
+margin_right = 860.0
+margin_bottom = 260.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 15 )
+action_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 24 )
+flat = true
+expand_icon = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="UI/UIEnd/Audio"]
+
+[connection signal="pressed" from="UI/UIEnd/BtnRestart" to="UI/UIEnd" method="_on_BtnRestart_pressed"]
+[connection signal="pressed" from="UI/UIEnd/BtnSelect" to="UI/UIEnd" method="_on_BtnSelect_pressed"]
+[connection signal="pressed" from="UI/UIEnd/BtnShare" to="UI/UIEnd/BtnShare" method="_on_BtnShare_pressed"]
+[connection signal="request_completed" from="UI/UIEnd/BtnShare/HTTPRequest" to="UI/UIEnd/BtnShare" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="UI/UIEnd/BtnCopyright" to="UI/UIEnd" method="_on_BtnCopyright_pressed"]
+[connection signal="pressed" from="UI/UIEnd/BtnGodot" to="UI/UIEnd" method="_on_BtnGodot_pressed"]
+[connection signal="pressed" from="UI/UIEnd/Audio/BtnBgmAudio" to="UI/UIEnd/Audio" method="_on_BtnBgmAudio_pressed"]
+[connection signal="pressed" from="UI/UIEnd/Audio/BtnSfxAudio" to="UI/UIEnd/Audio" method="_on_BtnSfxAudio_pressed"]
+[connection signal="request_completed" from="UI/UIEnd/Audio/HTTPRequest" to="UI/UIEnd/Audio" method="_on_HTTPRequest_request_completed"]

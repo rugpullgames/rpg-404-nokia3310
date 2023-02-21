@@ -8,13 +8,19 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "AudioLoader",
+"language": "GDScript",
+"path": "res://script/manager/audio_loader.gd"
+} ]
 _global_script_class_icons={
+"AudioLoader": ""
 }
 
 [application]
 
-config/name="Nokia 3310 Jam"
+config/name="RPG 404 - Nokia 3310"
 run/main_scene="res://data/scenes/Main.tscn"
 boot_splash/image="res://data/sprites/splash.png"
 boot_splash/use_filter=false
@@ -22,6 +28,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Events="*res://script/manager/mgr_event.gd"
+K="*res://script/manager/const.gd"
+G="*res://script/manager/global.gd"
+MgrNft="*res://script/manager/mgr_nft.gd"
 AudioManager="*res://data/autoload/AudioManager.gd"
 
 [debug]

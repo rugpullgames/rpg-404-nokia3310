@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/machine_purple_04.png-9c399ecf13968626b7c8a0f824dc2218.res"
+group_file="res://texture/atlas/barrier/machine_purple.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/machine_purple/machine_purple_04.png"
+dest_files=[ "res://.import/machine_purple_04.png-9c399ecf13968626b7c8a0f824dc2218.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/machine_purple.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

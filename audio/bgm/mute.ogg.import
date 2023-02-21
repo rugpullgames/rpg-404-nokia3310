@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mute.ogg-ad857761ba572ca2e5af4e790cfd27a2.oggstr"
+
+[deps]
+
+source_file="res://audio/bgm/mute.ogg"
+dest_files=[ "res://.import/mute.ogg-ad857761ba572ca2e5af4e790cfd27a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

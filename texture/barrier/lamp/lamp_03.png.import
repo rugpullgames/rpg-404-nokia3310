@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/lamp_03.png-62d9c34abdb9d26a0bfdf7f383246539.res"
+group_file="res://texture/atlas/barrier/lamp.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/lamp/lamp_03.png"
+dest_files=[ "res://.import/lamp_03.png-62d9c34abdb9d26a0bfdf7f383246539.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/lamp.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/robot_blue_05.png-d55ae5c20b914eb26600f042f3f82c9d.res"
+group_file="res://texture/atlas/barrier/robot_blue.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/robot_blue/robot_blue_05.png"
+dest_files=[ "res://.import/robot_blue_05.png-d55ae5c20b914eb26600f042f3f82c9d.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/robot_blue.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

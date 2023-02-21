@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cube_purple_01.png-ee82c93933b5959e63ff63a15174aaa5.res"
+group_file="res://texture/atlas/barrier/cube_purple.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cube_purple/cube_purple_01.png"
+dest_files=[ "res://.import/cube_purple_01.png-ee82c93933b5959e63ff63a15174aaa5.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cube_purple.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

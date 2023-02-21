@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cube_orange_05.png-66f0a8fbeb78d8f369f4855f6e3a53d7.res"
+group_file="res://texture/atlas/barrier/cube_orange.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cube_orange/cube_orange_05.png"
+dest_files=[ "res://.import/cube_orange_05.png-66f0a8fbeb78d8f369f4855f6e3a53d7.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cube_orange.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

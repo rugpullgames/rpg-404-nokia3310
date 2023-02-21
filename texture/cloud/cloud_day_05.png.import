@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cloud_day_05.png-cb3345e75837106a2d3fcb7e22df4f7a.res"
+group_file="res://texture/atlas/cloud/cloud_day.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/cloud/cloud_day_05.png"
+dest_files=[ "res://.import/cloud_day_05.png-cb3345e75837106a2d3fcb7e22df4f7a.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/cloud/cloud_day.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

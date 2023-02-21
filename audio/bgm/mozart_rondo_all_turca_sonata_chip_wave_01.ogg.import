@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mozart_rondo_all_turca_sonata_chip_wave_01.ogg-70ef774e13dcfb048af4465b9d85206b.oggstr"
+
+[deps]
+
+source_file="res://audio/bgm/mozart_rondo_all_turca_sonata_chip_wave_01.ogg"
+dest_files=[ "res://.import/mozart_rondo_all_turca_sonata_chip_wave_01.ogg-70ef774e13dcfb048af4465b9d85206b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/dirty_shit_05.png-e275b75571c229c4767a4c2377ac3d41.res"
+group_file="res://texture/atlas/barrier/dirty_shit.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/dirty_shit/dirty_shit_05.png"
+dest_files=[ "res://.import/dirty_shit_05.png-e275b75571c229c4767a4c2377ac3d41.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/dirty_shit.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cloud_night_01.png-57afb942d8f7bd4670ed88d613719c45.res"
+group_file="res://texture/atlas/cloud/cloud_night.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/cloud/cloud_night_01.png"
+dest_files=[ "res://.import/cloud_night_01.png-57afb942d8f7bd4670ed88d613719c45.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/cloud/cloud_night.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true

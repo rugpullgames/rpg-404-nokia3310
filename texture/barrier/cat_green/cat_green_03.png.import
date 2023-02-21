@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/cat_green_03.png-760c9781445ad0717c6e2a1959745551.res"
+group_file="res://texture/atlas/barrier/cat_green.png"
+valid=true
+[deps]
+
+
+source_file="res://texture/barrier/cat_green/cat_green_03.png"
+dest_files=[ "res://.import/cat_green_03.png-760c9781445ad0717c6e2a1959745551.res" ]
+
+[params]
+
+atlas_file="res://texture/atlas/barrier/cat_green.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
