@@ -8,7 +8,7 @@ extends Node
 # const
 const SPEED_X = K.SPEED_X
 const SCORE_FACTOR: float = 1.0 / 20
-const PLAYER_DEFAULT_POS_X = 180
+const PLAYER_DEFAULT_POS_X = 15
 
 # node
 onready var ScoreMarker: Node2D = $Game/ScoreMarker
@@ -28,8 +28,7 @@ func _ready():
 
 func _process(dt):
 	if G.game_state == K.GameState.READY:
-		# _update_player(dt)
-		pass
+		_update_player(dt)
 	elif G.game_state == K.GameState.RUNNING:
 		_update_marker(dt)
 		_update_bgm()

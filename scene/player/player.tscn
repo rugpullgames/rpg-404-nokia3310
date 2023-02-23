@@ -26,8 +26,10 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
 [node name="Emo" type="Sprite" parent="."]
+position = Vector2( -14, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+flip_h = true
 script = ExtResource( 9 )
 
 [node name="AudioJump" type="AudioStreamPlayer2D" parent="."]

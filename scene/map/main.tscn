@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://script/floor/base_floor.gd" type="Script" id=1]
 [ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scene/floor/floor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://audio/bgm/mute.ogg" type="AudioStream" id=14]
 [ext_resource path="res://theme/rpg404_theme.tres" type="Theme" id=15]
+[ext_resource path="res://texture/cloud/cloud_day_01.png" type="Texture" id=16]
 [ext_resource path="res://script/manager/audio.gd" type="Script" id=17]
 [ext_resource path="res://texture/ui/btn_game_restart.png" type="Texture" id=18]
 [ext_resource path="res://script/ui/ui_end.gd" type="Script" id=19]
@@ -169,6 +170,11 @@ collision_mask = 12
 [node name="Boom" parent="Game" instance=ExtResource( 25 )]
 position = Vector2( 0, -100 )
 z_index = 19
+
+[node name="CloudDay01" type="Sprite" parent="Game"]
+position = Vector2( 28, 11.5 )
+scale = Vector2( 0.387097, 0.375 )
+texture = ExtResource( 16 )
 
 [node name="UI" type="Control" parent="."]
 visible = false

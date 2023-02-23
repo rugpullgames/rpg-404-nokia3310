@@ -6,12 +6,9 @@
 extends KinematicBody2D
 
 # const
-const GRAVITY = 1500
-const JUMP_FORCE = 400
+const GRAVITY = 150
+const JUMP_FORCE = 40
 const LONG_JUMP_TIME = 0.1
-const WEAPON_JUMP_UP_OFFSET = Vector2(-10, 10)
-const WEAPON_JUMP_DOWN_OFFSET = Vector2(10, 15)
-const WEAPON_MOVE_OFFSET = Vector2()
 
 # local variables
 var _velocity = Vector2()
@@ -68,7 +65,6 @@ func _physics_process(dt):
 			# Pants.playing = true
 			# Head.moving = true
 			# Weapon.moving = true
-			# Weapon.offset = WEAPON_MOVE_OFFSET
 		else:
 			# jump
 
@@ -78,7 +74,6 @@ func _physics_process(dt):
 			# Pants.frame = 0 if _velocity.y < 0 else 1
 			# Head.moving = false
 			# Weapon.moving = false
-			# Weapon.offset = WEAPON_JUMP_UP_OFFSET if _velocity.y < 0 else WEAPON_JUMP_DOWN_OFFSET
 
 			# prevent player going out of screen
 			# prevent player gDOWNng out of screen
