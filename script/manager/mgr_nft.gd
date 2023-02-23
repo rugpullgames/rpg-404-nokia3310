@@ -15,7 +15,7 @@ const NFT_RPGT404_META_TEST = {
 		{"trait_type": "Barrier", "value": "Cube Yellow 02"},
 		{"trait_type": "Floor", "value": "Floor 29"},
 		{"trait_type": "Pants", "value": "Pants 13"},
-		{"trait_type": "Jacket", "value": "Jacket 10"},
+		{"trait_type": "Jacket", "value": "Jacket 01"},
 		{"trait_type": "Head", "value": "Head 16"},
 		{"trait_type": "Weapon", "value": "Weapon 09"},
 		{"trait_type": "Emo", "value": "Emo 07"},
@@ -35,9 +35,9 @@ const NFT_RPGT404_META_TEST = {
 
 const NFT_STRXNGERS_TOKEN_ID_TEST = 10
 const NFT_STRXNGERS_MAX = 6666
-var nft_brand = NftBrand.STRXNGERS
-var nft_rpg404_meta  # Metadata JSON
-# var nft_rpg404_meta = NFT_RPGT404_META_TEST  # Metadata JSON
+var nft_brand = NftBrand.RPG404
+# var nft_rpg404_meta  # Metadata JSON
+var nft_rpg404_meta = NFT_RPGT404_META_TEST  # Metadata JSON
 var nft_strxnger_token_id: int = randi() % NFT_STRXNGERS_MAX + 1  # random
 var NFT_TRAITS = null  # Traits Dict
 

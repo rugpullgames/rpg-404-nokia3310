@@ -28,7 +28,8 @@ func _ready():
 
 func _process(dt):
 	if G.game_state == K.GameState.READY:
-		_update_player(dt)
+		# _update_player(dt)
+		pass
 	elif G.game_state == K.GameState.RUNNING:
 		_update_marker(dt)
 		_update_bgm()
@@ -72,8 +73,8 @@ func _update_bgm():
 
 func _ready_game():
 	Floors.visible = true
-	player.position.x = -20
-	player.position.y = 150
+	player.position.x = 15
+	player.position.y = 28
 	ScoreMarker.position.x = 0
 	G.factor = 1
 	G.score = 0

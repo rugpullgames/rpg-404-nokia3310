@@ -20,10 +20,6 @@ var _tt = 0
 
 # nodes
 onready var Emo: Sprite = $Emo
-onready var Head: Sprite = $Head
-onready var Weapon: Sprite = $Weapon
-onready var Pants: AnimatedSprite = $Pants
-onready var StrxngerCloud: AnimatedSprite = $StrxngerCloud
 onready var AudioJump: AudioStreamPlayer2D = $AudioJump
 onready var AudioDie: AudioStreamPlayer2D = $AudioDie
 onready var AudioPowerUp: AudioStreamPlayer2D = $AudioPowerUp
@@ -37,12 +33,8 @@ func _ready():
 
 func _physics_process(dt):
 	if G.game_state == K.GameState.READY:
-		Pants.playing = true
-		StrxngerCloud.playing = true
 		return
 	elif G.game_state == K.GameState.END:
-		Pants.playing = false
-		StrxngerCloud.playing = false
 		return
 	elif G.game_state == K.GameState.RUNNING:
 		_velocity.y += dt * GRAVITY
@@ -70,20 +62,23 @@ func _physics_process(dt):
 
 		if is_on_floor():
 			# move
-			Pants.playing = true
-			StrxngerCloud.playing = true
-			Head.moving = true
-			Weapon.moving = true
-			Weapon.offset = WEAPON_MOVE_OFFSET
+
+			pass
+
+			# Pants.playing = true
+			# Head.moving = true
+			# Weapon.moving = true
+			# Weapon.offset = WEAPON_MOVE_OFFSET
 		else:
 			# jump
-			Pants.playing = false
-			Pants.frame = 0 if _velocity.y < 0 else 1
-			StrxngerCloud.playing = false
-			StrxngerCloud.frame = 2 if _velocity.y < 0 else 0
-			Head.moving = false
-			Weapon.moving = false
-			Weapon.offset = WEAPON_JUMP_UP_OFFSET if _velocity.y < 0 else WEAPON_JUMP_DOWN_OFFSET
+
+			pass
+
+			# Pants.playing = false
+			# Pants.frame = 0 if _velocity.y < 0 else 1
+			# Head.moving = false
+			# Weapon.moving = false
+			# Weapon.offset = WEAPON_JUMP_UP_OFFSET if _velocity.y < 0 else WEAPON_JUMP_DOWN_OFFSET
 
 			# prevent player going out of screen
 			# prevent player gDOWNng out of screen
