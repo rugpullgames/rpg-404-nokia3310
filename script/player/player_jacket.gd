@@ -5,11 +5,18 @@
 
 extends AnimatedSprite
 
+const SPEED_FACTOR = 0.3
+
 ### default
 
 
 func _ready():
 	_bind_events()
+
+
+func _process(_dt):
+	if G.game_state == K.GameState.RUNNING:
+		self.speed_scale = (G.factor - 1) * SPEED_FACTOR + 1
 
 
 ### public
