@@ -3,13 +3,24 @@
 # @see RPG 404: https://rpg404.com/
 # @author endaye.eth, Fried Egg Fendi
 
-extends Sprite
+extends AnimatedSprite
 
 ### default
 
 
 func _ready():
 	_bind_events()
+
+
+### public
+
+
+func run() -> void:
+	self.play("run")
+
+
+func jump() -> void:
+	self.play("jump")
 
 
 ### private

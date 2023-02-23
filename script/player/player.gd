@@ -17,6 +17,7 @@ var _tt = 0
 
 # nodes
 onready var Emo: Sprite = $Emo
+onready var Jacket: AnimatedSprite = $Jacket
 onready var AudioJump: AudioStreamPlayer2D = $AudioJump
 onready var AudioDie: AudioStreamPlayer2D = $AudioDie
 onready var AudioPowerUp: AudioStreamPlayer2D = $AudioPowerUp
@@ -59,16 +60,11 @@ func _physics_process(dt):
 
 		if is_on_floor():
 			# move
+			Jacket.run()
 
-			pass
-
-			# Pants.playing = true
-			# Head.moving = true
-			# Weapon.moving = true
 		else:
 			# jump
-
-			pass
+			Jacket.jump()
 
 			# Pants.playing = false
 			# Pants.frame = 0 if _velocity.y < 0 else 1
