@@ -42,6 +42,8 @@ func _bind_events() -> void:
 	assert(error_code == OK, error_code)
 	error_code = Events.connect("game_ready", self, "_reset")
 	assert(error_code == OK, error_code)
+	error_code = Events.connect("game_end", self, "_reset")
+	assert(error_code == OK, error_code)
 
 
 func _reset() -> void:

@@ -66,9 +66,6 @@ margin_top = 34.2436
 margin_right = 83.1106
 margin_bottom = 48.2436
 text = "[space] jump"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI"]
 modulate = Color( 0, 0, 0, 1 )

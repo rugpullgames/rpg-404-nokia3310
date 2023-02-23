@@ -11,6 +11,7 @@ const SCORE_FACTOR: float = 1.0 / 8
 const PLAYER_DEFAULT_POS_X = 15
 
 # node
+onready var GameNode: Node2D = $Game
 onready var ScoreMarker: Node2D = $Game/ScoreMarker
 onready var BGM: AudioStreamPlayer2D = $BGM
 onready var Floors: Node2D = $Game/Floors
@@ -71,6 +72,7 @@ func _update_bgm():
 
 
 func _ready_game():
+	GameNode.visible = true
 	Floors.visible = true
 	player.position.x = 15
 	player.position.y = 28
@@ -83,6 +85,7 @@ func _ready_game():
 
 
 func _run_game():
+	GameNode.visible = true
 	BGM.seek(0)
 	if G.bgm_audio:
 		BGM.play()
@@ -92,10 +95,7 @@ func _run_game():
 
 func _end_game():
 	G.game_state = K.GameState.END
+	GameNode.visible = false
 	BGM.stop()
 	Floors.visible = false
 	print("Game Over")
-
-
-
-

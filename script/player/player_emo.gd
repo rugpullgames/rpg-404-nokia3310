@@ -5,7 +5,7 @@
 
 extends Sprite
 
-const SHOW_TIME = 0.3
+const SHOW_TIME = 0.5
 
 var _tt = 0
 

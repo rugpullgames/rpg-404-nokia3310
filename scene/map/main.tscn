@@ -178,13 +178,12 @@ margin_bottom = 11.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 theme = ExtResource( 15 )
-text = "RPG 404"
+text = "0"
 align = 2
 uppercase = true
 script = ExtResource( 9 )
 
 [node name="UIEnd" type="Control" parent="UI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 15 )
@@ -269,7 +268,7 @@ clip_text = true
 align = 0
 
 [node name="RPGLogo" type="Sprite" parent="UI/UIEnd/BtnCopyright"]
-position = Vector2( 12, -20 )
+position = Vector2( 19, -12 )
 scale = Vector2( 0.41, 0.399801 )
 texture = ExtResource( 8 )
 
@@ -321,6 +320,18 @@ flat = true
 expand_icon = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="UI/UIEnd/Audio"]
+
+[node name="Logo" type="Label" parent="UI/UIEnd"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_bottom = 13.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme = ExtResource( 15 )
+text = "RPG 404"
+uppercase = true
 
 [connection signal="pressed" from="UI/UIEnd/BtnRestart" to="UI/UIEnd" method="_on_BtnRestart_pressed"]
 [connection signal="pressed" from="UI/UIEnd/BtnSelect" to="UI/UIEnd" method="_on_BtnSelect_pressed"]
