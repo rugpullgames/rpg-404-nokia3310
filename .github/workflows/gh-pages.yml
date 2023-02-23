@@ -1,0 +1,107 @@
+#Workflow based on https://github.com/abarichello/godot-ci
+name: "Github Pages"
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - ".githooks"
+      - ".gitignore"
+      - ".gitattributes"
+      - "README.md"
+      - "LICENSE"
+      - "_*"
+      - "**.bat"
+      - "**.sh"
+      - "build"
+      - "addons"
+      - "editor"
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - ".githooks"
+      - ".gitignore"
+      - ".gitattributes"
+      - "README.md"
+      - "LICENSE"
+      - "_*"
+      - "**.bat"
+      - "**.sh"
+      - "build"
+      - "addons"
+      - "editor"
+
+env:
+  GODOT_VERSION: 3.5.1
+  EXPORT_NAME: RPG 404 - Nokia 3310
+  GAME_VERSION: v0.0.0.0
+
+jobs:
+  build-web:
+    name: Build Web
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.5.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      # # Jpegoptim, https://github.com/tjko/jpegoptim
+      # # pngquant, https://pngquant.org/
+      # - name: Install jpegoptim & pngquant 🎁
+      #   run: |
+      #     apt-get update && apt-get install -y jpegoptim pngquant
+      # - name: Compress Images ✨
+      #   run: |
+      #     find ./texture -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec jpegoptim --size=30% -f --strip-all {} \;
+      #     pngquant --quality=10-30 -f --ext .png ./texture/**/*.png --speed 10
+      # # FFmpeg, https://ffmpeg.org/
+      # - name: Install FFmpeg 🎵
+      #   run: |
+      #     apt-get install -y ffmpeg
+      # - name: Compress Audios 🔉
+      #   run: |
+      #     find audio/* -type f -iname "*.wav" -execdir ffmpeg -i {} -y -f wav -bitexact -acodec pcm_u8 -ar 8k -ac 1 {}.tmp \; -execdir mv {}.tmp {} \;
+      #     find audio/* -type f -iname "*.ogg" -execdir ffmpeg -i {} -y -f ogg -c:a libvorbis -ab 16k -ar 8k {}.tmp \; -execdir mv {}.tmp {} \;
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Web Build 🔗
+        run: |
+          mkdir -v -p build/web
+          godot -v --export "HTML5" ./build/web/index.html
+      - name: Upload Artifact ⛩
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_web
+          path: build/web
+      # - name: Deploy to itch.io 🧰
+      #   uses: josephbmanley/butler-publish-itchio-action@master
+      #   env:
+      #     BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+      #     CHANNEL: web
+      #     ITCH_GAME: miss-peacock
+      #     ITCH_USER: endaye
+      #     PACKAGE: build/web
+      # - name: Install rsync 📚
+      #   run: |
+      #     apt-get install -y rsync
+      # - name: Deploy to GitHub Pages 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4.2.5
+      #   with:
+      #     branch: gh-pages # The branch the action should deploy to.
+      #     folder: build/web # The folder the action should deploy.
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
