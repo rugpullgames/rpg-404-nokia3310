@@ -47,6 +47,8 @@ func _process(dt):
 		self.queue_free()
 	elif G.game_state == K.GameState.RUNNING:
 		_move(dt)
+	elif G.game_state == K.GameState.END:
+		self.queue_free()
 
 
 func _exit_tree():
