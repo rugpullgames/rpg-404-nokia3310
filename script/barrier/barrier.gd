@@ -40,11 +40,20 @@ func reset(texture) -> void:
 
 	var texture_size = texture.get_size()
 	SprBarrier.texture = texture
-	SprBarrier.offset = -texture_size
-	CollsionShape.position.x = -texture_size.x * 2.5
+	SprBarrier.offset.x = -texture_size.x / 2
+	SprBarrier.offset.y = -texture_size.y
+	SprBarrier.position = Vector2.ZERO
+	# SprBarrier.offset = Vector2.ZERO
+	# CollsionShape.position.x = -texture_size.x * 2.5
 	CollsionShape.position.y = 0
-	Shape2d.radius = texture_size.x / 2
+	Shape2d.radius = texture_size.x / 3
 	Shape2d.height = texture_size.y / 2
+
+	print("SprBarrier.texture: ", SprBarrier.texture)
+	print("SprBarrier.offset: ", SprBarrier.offset)
+	print("CollsionShape.position: ", CollsionShape.position)
+	print("Shape2d.radius: ", Shape2d.radius)
+	print("Shape2d.height: ", Shape2d.height)
 
 	_moving = true
 	self.visible = true

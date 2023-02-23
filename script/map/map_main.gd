@@ -7,7 +7,7 @@ extends Node
 
 # const
 const SPEED_X = K.SPEED_X
-const SCORE_FACTOR: float = 1.0 / 20
+const SCORE_FACTOR: float = 1.0 / 8
 const PLAYER_DEFAULT_POS_X = 15
 
 # node

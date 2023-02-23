@@ -12,7 +12,7 @@ const NFT_RPGT404_META_TEST = {
 		{"trait_type": "Music", "value": "Mozart Rondo Alla Turca 03"},
 		{"trait_type": "Background", "value": "Light Blue Sky 01"},
 		{"trait_type": "Foreground", "value": "Base Floor"},
-		{"trait_type": "Barrier", "value": "Cube Yellow 02"},
+		{"trait_type": "Barrier", "value": "Cat Green"},
 		{"trait_type": "Floor", "value": "Floor 29"},
 		{"trait_type": "Pants", "value": "Pants 13"},
 		{"trait_type": "Jacket", "value": "Jacket 01"},
@@ -102,11 +102,6 @@ func _load_nft_metadata():
 					nft_brand = NftBrand.RPG404
 					nft_rpg404_meta = p.result
 					print("Found RPG 404 NFT")
-				elif p.result.nft_type == "Strxngers":
-					nft_brand = NftBrand.STRXNGERS
-					randomize()
-					nft_strxnger_token_id = p.result.edition
-					print("Found Strxngers NFT, #", nft_strxnger_token_id)
 				else:
 					push_warning("Wrong nft_type.")
 			else:

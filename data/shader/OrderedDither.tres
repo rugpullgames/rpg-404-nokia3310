@@ -229,14 +229,14 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -878, 144.125 )
+graph_offset = Vector2( -567.314, 30.4519 )
 mode = 1
 flags/light_only = false
-nodes/fragment/0/position = Vector2( 380, 40 )
+nodes/fragment/0/position = Vector2( 1160, 40 )
 nodes/fragment/4/node = SubResource( 8 )
-nodes/fragment/4/position = Vector2( -860, -40 )
+nodes/fragment/4/position = Vector2( -1180, -280 )
 nodes/fragment/9/node = SubResource( 9 )
-nodes/fragment/9/position = Vector2( -800, -240 )
+nodes/fragment/9/position = Vector2( -960, -560 )
 nodes/fragment/9/size = Vector2( 363, 187 )
 nodes/fragment/9/input_ports = ""
 nodes/fragment/9/output_ports = ""
@@ -247,7 +247,7 @@ nodes/fragment/9/expression = "const mat4 thresholdMap = mat4(
     vec4(10.0, 6.0, 9.0, 5.0)
 );"
 nodes/fragment/11/node = SubResource( 2 )
-nodes/fragment/11/position = Vector2( -360, 40 )
+nodes/fragment/11/position = Vector2( 0, 60 )
 nodes/fragment/11/size = Vector2( 553, 313 )
 nodes/fragment/11/input_ports = "0,1,pixelColor;1,1,color0;2,1,color1;3,0,threshold;"
 nodes/fragment/11/output_ports = "0,1,ditheredColor;"
@@ -255,7 +255,7 @@ nodes/fragment/11/expression = "// the value 0.9375 results when comparing inten
 // we just use 15.0 / 16.0 instead
 ditheredColor.rgb = (pixelColor.r > threshold * 0.9375) ? color0 : color1;"
 nodes/fragment/12/node = SubResource( 3 )
-nodes/fragment/12/position = Vector2( -800, -520 )
+nodes/fragment/12/position = Vector2( -1560, -620 )
 nodes/fragment/12/size = Vector2( 470, 261 )
 nodes/fragment/12/input_ports = ""
 nodes/fragment/12/output_ports = ""
@@ -304,21 +304,21 @@ nodes/fragment/12/expression = "float get_threshold(int x, int y) {
 	return 0.0;
 }"
 nodes/fragment/15/node = SubResource( 6 )
-nodes/fragment/15/position = Vector2( -860, 100 )
+nodes/fragment/15/position = Vector2( -860, -40 )
 nodes/fragment/16/node = SubResource( 7 )
 nodes/fragment/16/position = Vector2( -860, 220 )
 nodes/fragment/17/node = SubResource( 10 )
-nodes/fragment/17/position = Vector2( -860, 340 )
+nodes/fragment/17/position = Vector2( -840, 480 )
 nodes/fragment/19/node = SubResource( 12 )
-nodes/fragment/19/position = Vector2( -640, 300 )
+nodes/fragment/19/position = Vector2( -380, 600 )
 nodes/fragment/22/node = SubResource( 15 )
-nodes/fragment/22/position = Vector2( -640, -40 )
+nodes/fragment/22/position = Vector2( -400, -180 )
 nodes/fragment/23/node = SubResource( 16 )
-nodes/fragment/23/position = Vector2( -1220, 340 )
+nodes/fragment/23/position = Vector2( -1620, 400 )
 nodes/fragment/24/node = SubResource( 17 )
-nodes/fragment/24/position = Vector2( -1400, 340 )
+nodes/fragment/24/position = Vector2( -2020, 200 )
 nodes/fragment/25/node = SubResource( 18 )
-nodes/fragment/25/position = Vector2( -1400, 420 )
+nodes/fragment/25/position = Vector2( -2180, 540 )
 nodes/fragment/26/node = SubResource( 19 )
-nodes/fragment/26/position = Vector2( -1040, 340 )
+nodes/fragment/26/position = Vector2( -1240, 480 )
 nodes/fragment/connections = PoolIntArray( 11, 0, 0, 0, 17, 0, 19, 0, 15, 0, 11, 1, 16, 0, 11, 2, 19, 0, 11, 3, 4, 0, 22, 0, 22, 0, 11, 0, 24, 0, 23, 0, 25, 0, 23, 1, 23, 0, 26, 0, 26, 0, 17, 0 )

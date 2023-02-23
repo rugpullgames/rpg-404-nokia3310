@@ -7,7 +7,7 @@ extends KinematicBody2D
 
 # const
 const GRAVITY = 150
-const JUMP_FORCE = 40
+const JUMP_FORCE = 60
 const LONG_JUMP_TIME = 0.1
 
 # local variables

@@ -107,28 +107,23 @@ shape = SubResource( 1 )
 script = ExtResource( 10 )
 
 [node name="Barrier1" parent="Game/Barriers" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 1000, 240 )
+position = Vector2( 100, 46 )
 z_index = 10
 
 [node name="Barrier2" parent="Game/Barriers" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 1000, 240 )
+position = Vector2( 100, 46 )
 z_index = 10
 
 [node name="Barrier3" parent="Game/Barriers" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 1000, 240 )
+position = Vector2( 100, 46 )
 z_index = 10
 
 [node name="Barrier4" parent="Game/Barriers" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 1000, 240 )
+position = Vector2( 100, 46 )
 z_index = 10
 
 [node name="Barrier5" parent="Game/Barriers" instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 1000, 240 )
+position = Vector2( 100, 46 )
 z_index = 10
 
 [node name="Pets" type="Node" parent="Game"]
@@ -189,6 +184,7 @@ uppercase = true
 script = ExtResource( 9 )
 
 [node name="UIEnd" type="Control" parent="UI"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 15 )

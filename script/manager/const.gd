@@ -7,7 +7,7 @@ extends Node
 
 const SCREEN_WIDTH = 84
 const SCREEN_HEIGHT = 48
-const SPEED_X = 8
+const SPEED_X = 32
 const FACTOR_DELTA = 0.05
 const FACTOR_PET_DECR = 0.1
 const SCORE_PET_INCR = 10.0

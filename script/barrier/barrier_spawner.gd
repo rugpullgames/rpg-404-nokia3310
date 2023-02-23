@@ -9,7 +9,7 @@ extends Node
 const SPAWN_TIME_MIN = 2
 const SPAWN_TIME_MAX = 3
 const SPAWN_TIME_FACTOR = 0.5
-const DEFAULT_POS_X = 1000
+const DEFAULT_POS_X = 90
 
 # local var
 var _tt = 0
