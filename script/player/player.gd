@@ -51,13 +51,13 @@ func _physics_process(dt):
 			_long_jump = false
 			_tt = 0
 
-		if Input.is_action_pressed("jump") and is_on_floor():
+		if Input.is_action_pressed("ui_accept") and is_on_floor():
 			_velocity.y = -JUMP_FORCE
 			Emo.show_emo()
 			if G.sfx_audio:
 				AudioJump.play()
 
-		if Input.is_action_pressed("jump") and not _long_jump and _tt >= LONG_JUMP_TIME:
+		if Input.is_action_pressed("ui_accept") and not _long_jump and _tt >= LONG_JUMP_TIME:
 			_velocity.y = -JUMP_FORCE * 1.3
 			_long_jump = true
 			if G.sfx_audio and !AudioJump.is_playing():
@@ -65,7 +65,7 @@ func _physics_process(dt):
 
 		_velocity = move_and_slide(_velocity, Vector2.UP)
 
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("ui_accept"):
 			_tt += dt
 
 		if is_on_floor():
