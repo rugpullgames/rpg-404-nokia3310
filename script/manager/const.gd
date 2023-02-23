@@ -5,9 +5,9 @@
 
 extends Node
 
-const SCREEN_WIDTH = 840.0
-const SCREEN_HEIGHT = 480.0
-const SPEED_X = 480.0
+const SCREEN_WIDTH = 84
+const SCREEN_HEIGHT = 48
+const SPEED_X = 8
 const FACTOR_DELTA = 0.05
 const FACTOR_PET_DECR = 0.1
 const SCORE_PET_INCR = 10.0
@@ -82,7 +82,6 @@ const STARS = [
 
 
 func _ready():
-	_init_screen()
 	_clean_data()
 
 
@@ -115,15 +114,6 @@ func http_request_completed(result: int, response_code: int, user_file: String) 
 
 
 ### private
-
-
-func _init_screen():
-	get_tree().set_screen_stretch(
-		SceneTree.STRETCH_MODE_2D,
-		SceneTree.STRETCH_ASPECT_KEEP,
-		Vector2(SCREEN_WIDTH, SCREEN_HEIGHT),
-		1.0
-	)
 
 
 func _clean_data():

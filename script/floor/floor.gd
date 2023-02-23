@@ -7,7 +7,7 @@ extends Sprite
 
 # const
 const SCREEN_WIDTH = K.SCREEN_WIDTH
-const SCREEN_WIDTH_EXT = SCREEN_WIDTH + 300
+const SCREEN_WIDTH_EXT = SCREEN_WIDTH + 30
 const SPEED_X = K.SPEED_X
 
 const TMP_RPG404_FLOOR_FILE = "user://rpg404_floor.png"

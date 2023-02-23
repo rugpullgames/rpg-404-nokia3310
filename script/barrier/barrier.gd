@@ -7,7 +7,7 @@ extends Area2D
 
 # const
 const SCREEN_WIDTH = K.SCREEN_WIDTH
-const DEFAULT_POS_X = SCREEN_WIDTH + 100
+const DEFAULT_POS_X = SCREEN_WIDTH + 10
 const SPEED_X = K.SPEED_X
 
 # local var
@@ -56,7 +56,7 @@ func reset(texture) -> void:
 
 func _move(dt) -> void:
 	self.position.x -= SPEED_X * dt * G.factor
-	if self.position.x < -SCREEN_WIDTH - 100:
+	if self.position.x < -SCREEN_WIDTH - 10:
 		_moving = false
 		self.visible = false
 

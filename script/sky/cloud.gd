@@ -10,8 +10,8 @@ const SCREEN_WIDTH = K.SCREEN_WIDTH
 const DEFAULT_POS_X = SCREEN_WIDTH * 2
 const SPEED_X_MIN = K.SPEED_X * 0.5
 const SPEED_X_MAX = K.SPEED_X
-const OFFSET_Y_MIN = 50
-const OFFSET_Y_MAX = 250
+const OFFSET_Y_MIN = 2
+const OFFSET_Y_MAX = 40
 
 # local var
 var _speed_x = 0

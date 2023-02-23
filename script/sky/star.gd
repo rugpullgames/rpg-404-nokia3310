@@ -27,6 +27,7 @@ func _ready():
 
 
 func _process(dt):
+	self.visible = false
 	if G.game_state != K.GameState.RUNNING:
 		return
 	_move(dt)

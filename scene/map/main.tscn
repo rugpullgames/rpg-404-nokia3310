@@ -63,14 +63,19 @@ script = ExtResource( 5 )
 [node name="Stars" type="Node" parent="Game/SkyColor"]
 
 [node name="Star1" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Star2" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Star3" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Star4" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Star5" parent="Game/SkyColor/Stars" instance=ExtResource( 7 )]
+visible = false
 
 [node name="Cloud1" parent="Game/SkyColor" instance=ExtResource( 6 )]
 position = Vector2( 120, -2 )
@@ -81,26 +86,6 @@ position = Vector2( 120, -2 )
 z_index = 2
 
 [node name="Cloud3" parent="Game/SkyColor" instance=ExtResource( 6 )]
-position = Vector2( 1768, -8 )
-z_index = 2
-
-[node name="Cloud4" parent="Game/SkyColor" instance=ExtResource( 6 )]
-position = Vector2( 1768, -8 )
-z_index = 2
-
-[node name="Cloud5" parent="Game/SkyColor" instance=ExtResource( 6 )]
-position = Vector2( 1768, -8 )
-z_index = 2
-
-[node name="Cloud6" parent="Game/SkyColor" instance=ExtResource( 6 )]
-position = Vector2( 1768, -8 )
-z_index = 2
-
-[node name="Cloud7" parent="Game/SkyColor" instance=ExtResource( 6 )]
-position = Vector2( 1768, -8 )
-z_index = 2
-
-[node name="Cloud8" parent="Game/SkyColor" instance=ExtResource( 6 )]
 position = Vector2( 1768, -8 )
 z_index = 2
 
@@ -168,16 +153,19 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="Boom" parent="Game" instance=ExtResource( 25 )]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 0, -100 )
+scale = Vector2( 0.1, 0.11 )
 z_index = 19
 
 [node name="CloudDay01" type="Sprite" parent="Game"]
+visible = false
+modulate = Color( 0.698039, 0.2, 0.2, 1 )
 position = Vector2( 28, 11.5 )
-scale = Vector2( 0.387097, 0.375 )
+scale = Vector2( 0.5, 0.3 )
 texture = ExtResource( 16 )
 
 [node name="UI" type="Control" parent="."]
-visible = false
 margin_right = 84.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 84, 48 )
