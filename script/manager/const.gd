@@ -85,34 +85,6 @@ func _ready():
 	_clean_data()
 
 
-### public
-
-
-func http_download_texture(http_request: HTTPRequest, user_file: String, img_url: String) -> void:
-	if OS.get_name() != "HTML5":
-		http_request.set_use_threads(true)
-	http_request.set_download_file(user_file)
-
-	var error_code = http_request.request(img_url)
-	if error_code != OK:
-		push_error("An error occurred in the HTTP request.")
-
-
-func http_request_completed(result: int, response_code: int, user_file: String) -> Texture:
-	if result == OK:
-		if response_code == 200:
-			var texture = ImageTexture.new()
-			var image = Image.new()
-			image.load(user_file)
-			texture.create_from_image(image, 1)
-			return texture
-		else:
-			push_warning("response_code = %s" % response_code)
-	else:
-		push_warning("result = %s" % result)
-	return null
-
-
 ### private
 
 

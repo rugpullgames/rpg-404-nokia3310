@@ -7,7 +7,3 @@ position = Vector2( 0, 150 )
 z_index = 10
 offset = Vector2( -150, 0 )
 script = ExtResource( 2 )
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
