@@ -31,7 +31,6 @@ tracks/0/keys = {
 script = ExtResource( 4 )
 
 [node name="UI" type="Control" parent="."]
-visible = false
 margin_right = 84.0
 margin_bottom = 48.0
 theme = SubResource( 3 )
@@ -62,9 +61,6 @@ margin_top = 2.24362
 margin_right = 42.1106
 margin_bottom = 16.2436
 text = "NOKIA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label2" type="Label" parent="UI"]
 modulate = Color( 0, 0, 0, 1 )
@@ -97,7 +93,6 @@ script = ExtResource( 3 )
 "anims/New Anim" = SubResource( 4 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-visible = false
 margin_right = 84.0
 margin_bottom = 48.0
 
@@ -106,9 +101,8 @@ size = Vector2( 84, 48 )
 own_world = true
 transparent_bg = true
 handle_input_locally = false
-render_target_update_mode = 0
+render_target_update_mode = 3
 
 [node name="Spatial" parent="ViewportContainer/Viewport" instance=ExtResource( 5 )]
 
 [node name="Main" parent="." instance=ExtResource( 6 )]
-position = Vector2( 731, 234 )

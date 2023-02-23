@@ -54,16 +54,6 @@ func _restart_game():
 func _on_BtnRestart_pressed():
 	_restart_game()
 
-
-func _on_BtnSelect_pressed():
-	JavaScript.eval("parent.location.reload();")
-
-
 func _on_BtnCopyright_pressed():
-	var error_code = OS.shell_open("https://rug-pull.games/")
-	assert(error_code == OK, error_code)
-
-
-func _on_BtnGodot_pressed():
-	var error_code = OS.shell_open("https://godotengine.org")
+	var error_code = OS.shell_open("https://rpg404.com/")
 	assert(error_code == OK, error_code)

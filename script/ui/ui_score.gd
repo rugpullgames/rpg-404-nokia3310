@@ -3,7 +3,7 @@
 # @see RPG 404: https://rpg404.com/
 # @author endaye.eth, Fried Egg Fendi
 
-extends Label
+extends Control
 
 ### default
 

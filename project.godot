@@ -42,6 +42,7 @@ settings/fps/force_fps=15
 
 window/size/width=840
 window/size/height=480
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -114,5 +115,4 @@ quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 quality/filters/use_nearest_mipmap_filter=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

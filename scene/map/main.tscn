@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://script/floor/base_floor.gd" type="Script" id=1]
 [ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://script/sky/sky.gd" type="Script" id=5]
 [ext_resource path="res://scene/sky/cloud.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scene/sky/star.tscn" type="PackedScene" id=7]
-[ext_resource path="res://texture/logo/godot_icon.svg" type="Texture" id=8]
+[ext_resource path="res://texture/pet/carret_01.png" type="Texture" id=8]
 [ext_resource path="res://script/ui/ui_score.gd" type="Script" id=9]
 [ext_resource path="res://script/barrier/barrier_spawner.gd" type="Script" id=10]
 [ext_resource path="res://scene/barrier/barrier.tscn" type="PackedScene" id=11]
@@ -15,7 +15,6 @@
 [ext_resource path="res://scene/floor/floor.tscn" type="PackedScene" id=13]
 [ext_resource path="res://audio/bgm/mute.ogg" type="AudioStream" id=14]
 [ext_resource path="res://theme/rpg404_theme.tres" type="Theme" id=15]
-[ext_resource path="res://texture/logo/rpg_logo.png" type="Texture" id=16]
 [ext_resource path="res://script/manager/audio.gd" type="Script" id=17]
 [ext_resource path="res://texture/ui/btn_game_restart.png" type="Texture" id=18]
 [ext_resource path="res://script/ui/ui_end.gd" type="Script" id=19]
@@ -51,14 +50,14 @@ script = ExtResource( 2 )
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
 
-[node name="Game" type="CanvasLayer" parent="."]
+[node name="Game" type="Node2D" parent="."]
+visible = false
 
 [node name="ScoreMarker" type="Node2D" parent="Game"]
 
 [node name="SkyColor" type="ColorRect" parent="Game"]
-margin_right = 900.0
-margin_bottom = 300.0
-color = Color( 0.372549, 0.690196, 0.729412, 1 )
+margin_right = 84.0
+margin_bottom = 48.0
 script = ExtResource( 5 )
 
 [node name="Stars" type="Node" parent="Game/SkyColor"]
@@ -173,17 +172,23 @@ collision_mask = 12
 position = Vector2( 0, -100 )
 z_index = 19
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="Control" parent="."]
+margin_right = 84.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 84, 48 )
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Score" type="Label" parent="UI"]
-anchor_left = 1.0
+modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
-margin_left = -380.0
-margin_top = 20.0
-margin_right = -200.0
-margin_bottom = 40.0
-rect_scale = Vector2( 2, 2 )
-size_flags_horizontal = 5
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = 11.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
 theme = ExtResource( 15 )
 text = "RPG 404"
 align = 2
@@ -197,10 +202,15 @@ theme = ExtResource( 15 )
 script = ExtResource( 19 )
 
 [node name="BtnRestart" type="Button" parent="UI/UIEnd"]
-margin_left = 500.0
-margin_top = 80.0
-margin_right = 600.0
-margin_bottom = 180.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.0
+margin_top = -11.0
+margin_right = 32.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 15, 15 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 15 )
@@ -209,9 +219,10 @@ action_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 18 )
 flat = true
-expand_icon = true
+icon_align = 1
 
 [node name="BtnSelect" type="Button" parent="UI/UIEnd"]
+visible = false
 margin_left = 640.0
 margin_top = 80.0
 margin_right = 740.0
@@ -227,10 +238,12 @@ flat = true
 expand_icon = true
 
 [node name="BtnShare" type="Button" parent="UI/UIEnd"]
-margin_left = 780.0
-margin_top = 100.0
-margin_right = 840.0
-margin_bottom = 160.0
+visible = false
+modulate = Color( 0.0705882, 0, 0, 1 )
+margin_left = 22.0
+margin_top = 13.0
+margin_right = 51.0
+margin_bottom = 36.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
@@ -249,60 +262,33 @@ animation = "boom"
 [node name="HTTPRequest" type="HTTPRequest" parent="UI/UIEnd/BtnShare"]
 
 [node name="BtnCopyright" type="Button" parent="UI/UIEnd"]
-margin_left = 50.0
-margin_top = 268.0
-margin_right = 350.0
-margin_bottom = 298.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_top = -15.0
+margin_right = 7.0
+margin_bottom = 2.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 shortcut_in_tooltip = false
 action_mode = 0
 enabled_focus_mode = 0
-text = "© Rug Pull Games"
+text = "©RugPullGames"
 flat = true
 clip_text = true
 align = 0
 
 [node name="RPGLogo" type="Sprite" parent="UI/UIEnd/BtnCopyright"]
-position = Vector2( -20, 2 )
-scale = Vector2( 0.13, 0.13 )
-texture = ExtResource( 16 )
-
-[node name="RPG404" type="Label" parent="UI/UIEnd/BtnCopyright"]
-margin_left = 8.0
-margin_top = -30.0
-margin_right = 308.0
-text = "RPG 404"
-valign = 2
-
-[node name="BtnGodot" type="Button" parent="UI/UIEnd"]
-margin_left = 360.0
-margin_top = 268.0
-margin_right = 660.0
-margin_bottom = 298.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-shortcut_in_tooltip = false
-action_mode = 0
-enabled_focus_mode = 0
-text = "Made by Godot Engine"
-flat = true
-
-[node name="GodotLogo" type="Sprite" parent="UI/UIEnd/BtnGodot"]
-position = Vector2( -20, 2 )
-scale = Vector2( 0.04, 0.04 )
+position = Vector2( 12, -20 )
+scale = Vector2( 0.41, 0.399801 )
 texture = ExtResource( 8 )
 
-[node name="Version" type="Label" parent="UI/UIEnd/BtnGodot"]
-margin_left = 6.0
-margin_top = -30.0
-margin_right = 310.0
-text = "Game v.0.0.0.000000"
-valign = 2
-
 [node name="Audio" type="Control" parent="UI/UIEnd"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 17.0
+margin_top = 80.0
+margin_right = 57.0
+margin_bottom = 120.0
 script = ExtResource( 17 )
 path_to_bgm = NodePath("../../../BGM")
 
@@ -352,7 +338,6 @@ expand_icon = true
 [connection signal="pressed" from="UI/UIEnd/BtnShare" to="UI/UIEnd/BtnShare" method="_on_BtnShare_pressed"]
 [connection signal="request_completed" from="UI/UIEnd/BtnShare/HTTPRequest" to="UI/UIEnd/BtnShare" method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="UI/UIEnd/BtnCopyright" to="UI/UIEnd" method="_on_BtnCopyright_pressed"]
-[connection signal="pressed" from="UI/UIEnd/BtnGodot" to="UI/UIEnd" method="_on_BtnGodot_pressed"]
 [connection signal="pressed" from="UI/UIEnd/Audio/BtnBgmAudio" to="UI/UIEnd/Audio" method="_on_BtnBgmAudio_pressed"]
 [connection signal="pressed" from="UI/UIEnd/Audio/BtnSfxAudio" to="UI/UIEnd/Audio" method="_on_BtnSfxAudio_pressed"]
 [connection signal="request_completed" from="UI/UIEnd/Audio/HTTPRequest" to="UI/UIEnd/Audio" method="_on_HTTPRequest_request_completed"]
