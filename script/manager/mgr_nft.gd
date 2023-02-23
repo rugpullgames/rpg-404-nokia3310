@@ -59,11 +59,6 @@ func reload_nft():
 		_update_metadata_traits()
 		print("Player RPG 404")
 		Events.emit_signal("game_ready")
-	elif nft_strxnger_token_id:
-		_get_traits_strxngers()
-		_update_metadata_traits()
-		print("Player Strxngers")
-		Events.emit_signal("game_ready")
 	else:
 		push_warning("Metadata is NULL.")
 
@@ -119,19 +114,6 @@ func _get_traits_rpg404():
 	NFT_TRAITS = {}
 	for trait in nft_rpg404_meta.attributes:
 		NFT_TRAITS[trait.trait_type.to_lower()] = trait.value.to_lower().replace(" ", "_")
-
-
-func _get_traits_strxngers():
-	NFT_TRAITS = {}
-	var bg_keys = K.DATA_BACKGROUND.keys()
-	var idx = randi() % bg_keys.size()
-	NFT_TRAITS["background"] = bg_keys[idx]
-	idx = randi() % K.DATA_NFT_STRXNGERS.barrier.size()
-	NFT_TRAITS["barrier"] = K.DATA_NFT_STRXNGERS.barrier[idx]
-	idx = randi() % K.DATA_NFT_STRXNGERS.emo.size()
-	NFT_TRAITS["emo"] = K.DATA_NFT_STRXNGERS.emo[idx]
-	idx = randi() % K.DATA_NFT_STRXNGERS.pet.size()
-	NFT_TRAITS["pet"] = K.DATA_NFT_STRXNGERS.pet[idx]
 
 
 func _update_metadata_traits():

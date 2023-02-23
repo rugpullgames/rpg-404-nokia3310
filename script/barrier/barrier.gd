@@ -49,12 +49,6 @@ func reset(texture) -> void:
 	Shape2d.radius = texture_size.x / 3
 	Shape2d.height = texture_size.y / 2
 
-	print("SprBarrier.texture: ", SprBarrier.texture)
-	print("SprBarrier.offset: ", SprBarrier.offset)
-	print("CollsionShape.position: ", CollsionShape.position)
-	print("Shape2d.radius: ", Shape2d.radius)
-	print("Shape2d.height: ", Shape2d.height)
-
 	_moving = true
 	self.visible = true
 	self.position.x = DEFAULT_POS_X
