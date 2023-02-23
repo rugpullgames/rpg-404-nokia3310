@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rabbit.png-23052a5d397b69374509bc436f605b18.stex"
+path="res://.import/rabbit1.png-a1faa81d993ec8c8c99f97763f91a425.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texture/jacket/rabbit.png"
-dest_files=[ "res://.import/rabbit.png-23052a5d397b69374509bc436f605b18.stex" ]
+source_file="res://texture/jacket/rabbit1.png"
+dest_files=[ "res://.import/rabbit1.png-a1faa81d993ec8c8c99f97763f91a425.stex" ]
 
 [params]
 

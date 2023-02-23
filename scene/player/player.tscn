@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://texture/jacket/rabbit.png" type="Texture" id=1]
+[ext_resource path="res://texture/jacket/rabbit1.png" type="Texture" id=1]
 [ext_resource path="res://texture/emo/emo_03.png" type="Texture" id=2]
 [ext_resource path="res://data/sfx/sfx01.wav" type="AudioStream" id=4]
 [ext_resource path="res://audio/sfx/explosion_01.wav" type="AudioStream" id=7]
