@@ -31,6 +31,16 @@ on:
       - "addons"
       - "editor"
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 env:
   GODOT_VERSION: 3.5.1
   EXPORT_NAME: RPG 404 - Nokia 3310
@@ -38,7 +48,6 @@ env:
 
 jobs:
   build-web:
-    name: Build Web
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:3.5.1
@@ -77,6 +86,8 @@ jobs:
         with:
           name: build_web
           path: build/web
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
       # - name: Deploy to itch.io 🧰
       #   uses: josephbmanley/butler-publish-itchio-action@master
       #   env:
