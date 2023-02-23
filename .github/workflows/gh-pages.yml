@@ -88,6 +88,8 @@ jobs:
           path: build/web
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build/web
       # - name: Deploy to itch.io 🧰
       #   uses: josephbmanley/butler-publish-itchio-action@master
       #   env:
