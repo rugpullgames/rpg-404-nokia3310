@@ -6,7 +6,6 @@
 extends Control
 
 # nodes
-onready var Version: Label = $BtnGodot/Version
 onready var BtnShareEffect: AnimatedSprite = $BtnShare/BtnEffect
 
 ### default
