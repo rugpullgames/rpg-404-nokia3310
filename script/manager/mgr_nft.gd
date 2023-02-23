@@ -19,7 +19,7 @@ const NFT_RPGT404_META_TEST = {
 		{"trait_type": "Head", "value": "Head 16"},
 		{"trait_type": "Weapon", "value": "Weapon 09"},
 		{"trait_type": "Emo", "value": "Emo 07"},
-		{"trait_type": "Pet", "value": "Space Ship"}
+		{"trait_type": "Pet", "value": "Carret 01"}
 	],
 	"date": 1655407034751,
 	"description":

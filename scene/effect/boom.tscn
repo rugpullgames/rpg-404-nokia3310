@@ -17,7 +17,7 @@ animations = [ {
 } ]
 
 [node name="Boom" type="AnimatedSprite"]
-position = Vector2( 400, 150 )
+modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 2 )
 animation = "boom"

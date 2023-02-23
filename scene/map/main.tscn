@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://script/floor/base_floor.gd" type="Script" id=1]
 [ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://texture/effect/boom/boom_effect_0002.png" type="Texture" id=31]
 [ext_resource path="res://texture/effect/boom/boom_effect_0001.png" type="Texture" id=32]
 [ext_resource path="res://script/manager/share.gd" type="Script" id=33]
+[ext_resource path="res://scene/pet/pet.tscn" type="PackedScene" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 4 )
@@ -130,6 +131,8 @@ z_index = 10
 script = ExtResource( 22 )
 path_to_boom_effect = NodePath("../Boom")
 
+[node name="Area2D" parent="Game/Pets" instance=ExtResource( 34 )]
+
 [node name="Floors" type="Node2D" parent="Game"]
 script = ExtResource( 12 )
 
@@ -148,8 +151,7 @@ collision_layer = 2
 collision_mask = 12
 
 [node name="Boom" parent="Game" instance=ExtResource( 25 )]
-modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 0, -100 )
+position = Vector2( 23, 9 )
 scale = Vector2( 0.1, 0.11 )
 z_index = 19
 
@@ -161,6 +163,7 @@ scale = Vector2( 0.5, 0.3 )
 texture = ExtResource( 16 )
 
 [node name="UI" type="Control" parent="."]
+visible = false
 margin_right = 84.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 84, 48 )
