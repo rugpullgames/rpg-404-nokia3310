@@ -9,6 +9,9 @@ extends KinematicBody2D
 const GRAVITY = 150
 const JUMP_FORCE = 60
 const LONG_JUMP_TIME = 0.1
+const SFX_JUMP: AudioStream = preload("res://audio/sfx/blip1.wav")
+const SFX_POWERUP: AudioStream = preload("res://data/sfx/sfx01.wav")
+const SFX_DIE: AudioStream = preload("res://audio/sfx/explosion_01.wav")
 
 # local variables
 var _velocity = Vector2()
@@ -18,9 +21,6 @@ var _tt = 0
 # nodes
 onready var Emo: Sprite = $Emo
 onready var Jacket: AnimatedSprite = $Jacket
-onready var AudioJump: AudioStreamPlayer2D = $AudioJump
-onready var AudioDie: AudioStreamPlayer2D = $AudioDie
-onready var AudioPowerUp: AudioStreamPlayer2D = $AudioPowerUp
 
 ### default
 
@@ -45,13 +45,13 @@ func _physics_process(dt):
 			_velocity.y = -JUMP_FORCE
 			Emo.show_emo()
 			if G.sfx_audio:
-				AudioJump.play()
+				AudioManager.play_sfx(SFX_JUMP)
 
 		if Input.is_action_pressed("ui_accept") and not _long_jump and _tt >= LONG_JUMP_TIME:
 			_velocity.y = -JUMP_FORCE * 1.3
 			_long_jump = true
-			if G.sfx_audio and !AudioJump.is_playing():
-				AudioJump.play()
+			if G.sfx_audio and !AudioManager.is_playing_sfx():
+				AudioManager.play_sfx(SFX_JUMP)
 
 		_velocity = move_and_slide(_velocity, Vector2.UP)
 
@@ -81,7 +81,7 @@ func _physics_process(dt):
 
 func play_audio_power_up() -> void:
 	if G.sfx_audio:
-		AudioPowerUp.play()
+		AudioManager.play_sfx(SFX_POWERUP)
 
 
 ### private methods
@@ -98,4 +98,4 @@ func _player_die() -> void:
 
 func _play_audio_die() -> void:
 	if G.sfx_audio:
-		AudioDie.play()
+		AudioManager.play_sfx(SFX_DIE)

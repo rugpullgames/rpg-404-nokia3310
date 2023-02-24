@@ -1,8 +1,7 @@
 extends Node
 
-
-var _music:AudioStreamPlayer
-var _sfx:AudioStreamPlayer
+var _music: AudioStreamPlayer
+var _sfx: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -21,6 +20,10 @@ func play_music(music_stream: AudioStream) -> void:
 	_music.play()
 
 
+func is_playing_music() -> bool:
+	return _music.playing
+
+
 func stop_music() -> void:
 	_music.stop()
 
@@ -30,6 +33,10 @@ func play_sfx(sfx_stream: AudioStream) -> void:
 	_sfx.stop()
 	_sfx.stream = sfx_stream
 	_sfx.play()
+
+
+func is_playing_sfx() -> bool:
+	return _sfx.playing
 
 
 func _on_sfx_finished() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
 [ext_resource path="res://scene/player/player.tscn" type="PackedScene" id=3]
@@ -15,16 +15,12 @@
 [ext_resource path="res://audio/bgm/mute.ogg" type="AudioStream" id=14]
 [ext_resource path="res://theme/rpg404_theme.tres" type="Theme" id=15]
 [ext_resource path="res://texture/cloud/cloud_day_01.png" type="Texture" id=16]
-[ext_resource path="res://script/manager/audio.gd" type="Script" id=17]
 [ext_resource path="res://texture/ui/btn_game_restart.png" type="Texture" id=18]
 [ext_resource path="res://script/ui/ui_end.gd" type="Script" id=19]
 [ext_resource path="res://texture/ui/btn_game_select_nft.png" type="Texture" id=20]
 [ext_resource path="res://texture/ui/btn_share_twitter.png" type="Texture" id=21]
 [ext_resource path="res://script/pet/pet_spawner.gd" type="Script" id=22]
-[ext_resource path="res://texture/ui/btn_game_bgm_on.png" type="Texture" id=23]
-[ext_resource path="res://texture/ui/btn_game_sfx_on.png" type="Texture" id=24]
 [ext_resource path="res://scene/effect/boom.tscn" type="PackedScene" id=25]
-[ext_resource path="res://script/manager/audio_loader.gd" type="Script" id=26]
 [ext_resource path="res://texture/effect/boom/boom_effect_0006.png" type="Texture" id=27]
 [ext_resource path="res://texture/effect/boom/boom_effect_0004.png" type="Texture" id=28]
 [ext_resource path="res://texture/effect/boom/boom_effect_0003.png" type="Texture" id=29]
@@ -268,55 +264,6 @@ position = Vector2( 19, -12 )
 scale = Vector2( 0.41, 0.399801 )
 texture = ExtResource( 8 )
 
-[node name="Audio" type="Control" parent="UI/UIEnd"]
-margin_left = 17.0
-margin_top = 80.0
-margin_right = 57.0
-margin_bottom = 120.0
-script = ExtResource( 17 )
-path_to_bgm = NodePath("../../../BGM")
-
-[node name="AudioLoader" type="Node" parent="UI/UIEnd/Audio"]
-script = ExtResource( 26 )
-
-[node name="BtnBgmAudio" type="Button" parent="UI/UIEnd/Audio"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 740.0
-margin_top = 200.0
-margin_right = 800.0
-margin_bottom = 260.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource( 15 )
-action_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 23 )
-flat = true
-expand_icon = true
-
-[node name="BtnSfxAudio" type="Button" parent="UI/UIEnd/Audio"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 800.0
-margin_top = 200.0
-margin_right = 860.0
-margin_bottom = 260.0
-focus_mode = 0
-mouse_default_cursor_shape = 2
-theme = ExtResource( 15 )
-action_mode = 0
-enabled_focus_mode = 0
-icon = ExtResource( 24 )
-flat = true
-expand_icon = true
-
-[node name="HTTPRequest" type="HTTPRequest" parent="UI/UIEnd/Audio"]
-
 [node name="Logo" type="Label" parent="UI/UIEnd"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
@@ -334,6 +281,3 @@ uppercase = true
 [connection signal="pressed" from="UI/UIEnd/BtnShare" to="UI/UIEnd/BtnShare" method="_on_BtnShare_pressed"]
 [connection signal="request_completed" from="UI/UIEnd/BtnShare/HTTPRequest" to="UI/UIEnd/BtnShare" method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="UI/UIEnd/BtnCopyright" to="UI/UIEnd" method="_on_BtnCopyright_pressed"]
-[connection signal="pressed" from="UI/UIEnd/Audio/BtnBgmAudio" to="UI/UIEnd/Audio" method="_on_BtnBgmAudio_pressed"]
-[connection signal="pressed" from="UI/UIEnd/Audio/BtnSfxAudio" to="UI/UIEnd/Audio" method="_on_BtnSfxAudio_pressed"]
-[connection signal="request_completed" from="UI/UIEnd/Audio/HTTPRequest" to="UI/UIEnd/Audio" method="_on_HTTPRequest_request_completed"]
