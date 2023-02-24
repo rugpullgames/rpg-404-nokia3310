@@ -17,9 +17,9 @@ Link: [endaye.itch.io/rpg404-nokia](https://endaye.itch.io/rpg404-nokia).
 
 A game made for the [NOKIA 3310 JAM 5](https://itch.io/jam/nokiajam5). The theme of the JAM is **FAST & SLOW**.
 
-Welcome to the world of Nokia 3310, where the world is collapsing at an accelerating rate. As an offline rabbit, your mission is to slow down the collapsing by consuming as many carrots as possible. However, electric cats are preventing you from reaching the carrot patches and hindering your progress. Jump to skip them...
+Welcome to the world of [Nokia 3310](https://www.nokia.com/phones/en_gb/nokia-3310/), where the world is collapsing at an accelerating rate. As an offline rabbit, your mission is to slow down the collapsing by consuming as many carrots as possible. However, electric cats are preventing you from reaching the carrot patches and hindering your progress. Jump to skip them...
 
-You are an offline rabbit in Nokia 3310.
+You are an offline rabbit in [Nokia 3310](https://www.nokia.com/phones/en_gb/nokia-3310/).
 
 You love carrots. You hate electric cats.
 
@@ -30,16 +30,25 @@ You love carrots. You hate electric cats.
 * Music: [Turkish March (Mozart)](https://en.wikipedia.org/wiki/Piano_Sonata_No._11_(Mozart))
 * SFX: [Trix Sound Pack](https://phillipp.itch.io/nokiajamresources) ([@Trixelized](https://twitter.com/Trixelized))
 
-## Screenshots
+## Game Screenshots
 
 <img width="420" alt="Screenshot 2023-02-25 at 01 28 56" src="https://user-images.githubusercontent.com/4829591/221277731-b9c47439-a976-4256-88ed-9bd6f0a3e1ad.png">
-
 
 <img width="420" alt="Screenshot 2023-02-25 at 02 48 30" src="https://user-images.githubusercontent.com/4829591/221277393-788d4c91-6356-4a08-a61b-b66f537ccb90.png">
 
 <img width="420" alt="Screenshot 2023-02-25 at 02 33 52" src="https://user-images.githubusercontent.com/4829591/221277238-5bb5ffd1-b3be-4100-a9c1-fac37c8999b1.png">
 
 <img width="420" alt="Screenshot 2023-02-25 at 02 43 30" src="https://user-images.githubusercontent.com/4829591/221277459-59ed9f26-06d5-4066-9a5f-fd1f6f50cfc1.png">
+
+## Dev Screenshots
+
+<img width="1512" alt="Screenshot 2023-02-25 at 03 55 47" src="https://user-images.githubusercontent.com/4829591/221278691-e5f38b78-a610-47ad-ad24-a339f1dc09db.png">
+
+<img width="1512" alt="Screenshot 2023-02-25 at 03 56 10" src="https://user-images.githubusercontent.com/4829591/221278767-55c36a51-87fe-4744-8ace-aa86458b0cf4.png">
+
+<img width="1512" alt="Screenshot 2023-02-25 at 02 43 00" src="https://user-images.githubusercontent.com/4829591/221278797-84697d45-1c64-4be6-9c4f-ca8eff700854.png">
+
+
 
 
 
