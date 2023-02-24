@@ -277,17 +277,21 @@ position = Vector2( 19, -12 )
 scale = Vector2( 0.41, 0.399801 )
 texture = ExtResource( 8 )
 
-[node name="Logo" type="Label" parent="UI/UIEnd"]
+[node name="Logo" type="RichTextLabel" parent="UI/UIEnd"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 margin_left = 2.0
-margin_top = 2.0
-margin_bottom = 13.0
+margin_top = -8.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 theme = ExtResource( 15 )
-text = "RPG 404"
-uppercase = true
+bbcode_enabled = true
+bbcode_text = "
+[wave amp=30 freq=5]RPG 404[/wave]"
+text = "
+RPG 404"
+scroll_active = false
 
 [connection signal="pressed" from="UI/UIEnd/BtnRestart" to="UI/UIEnd" method="_on_BtnRestart_pressed"]
 [connection signal="pressed" from="UI/UIEnd/BtnSelect" to="UI/UIEnd" method="_on_BtnSelect_pressed"]
