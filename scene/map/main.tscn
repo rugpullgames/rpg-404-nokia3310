@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
+[ext_resource path="res://texture/ui/btn_game_restart_4.png" type="Texture" id=1]
 [ext_resource path="res://script/map/map_main.gd" type="Script" id=2]
 [ext_resource path="res://scene/player/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://texture/foreground/base_floor.png" type="Texture" id=4]
@@ -15,11 +16,13 @@
 [ext_resource path="res://audio/bgm/mute.ogg" type="AudioStream" id=14]
 [ext_resource path="res://theme/rpg404_theme.tres" type="Theme" id=15]
 [ext_resource path="res://texture/cloud/cloud_day_01.png" type="Texture" id=16]
-[ext_resource path="res://texture/ui/btn_game_restart.png" type="Texture" id=18]
+[ext_resource path="res://texture/ui/btn_game_restart_2.png" type="Texture" id=17]
+[ext_resource path="res://texture/ui/btn_game_restart_3.png" type="Texture" id=18]
 [ext_resource path="res://script/ui/ui_end.gd" type="Script" id=19]
 [ext_resource path="res://texture/ui/btn_game_select_nft.png" type="Texture" id=20]
 [ext_resource path="res://texture/ui/btn_share_twitter.png" type="Texture" id=21]
 [ext_resource path="res://script/pet/pet_spawner.gd" type="Script" id=22]
+[ext_resource path="res://texture/ui/btn_game_restart_1.png" type="Texture" id=23]
 [ext_resource path="res://scene/effect/boom.tscn" type="PackedScene" id=25]
 [ext_resource path="res://texture/effect/boom/boom_effect_0006.png" type="Texture" id=27]
 [ext_resource path="res://texture/effect/boom/boom_effect_0004.png" type="Texture" id=28]
@@ -31,6 +34,16 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 4 )
+
+[sub_resource type="AnimatedTexture" id=3]
+frames = 4
+frame_0/texture = ExtResource( 23 )
+frame_1/texture = ExtResource( 17 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 18 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 1 )
+frame_3/delay_sec = 0.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -197,7 +210,7 @@ theme = ExtResource( 15 )
 shortcut_in_tooltip = false
 action_mode = 0
 enabled_focus_mode = 0
-icon = ExtResource( 18 )
+icon = SubResource( 3 )
 flat = true
 icon_align = 1
 
