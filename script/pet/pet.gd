@@ -11,7 +11,7 @@ onready var SprPet: Sprite = $SprPet
 # const
 const SCREEN_WIDTH = K.SCREEN_WIDTH
 const DEFAULT_POS_X = SCREEN_WIDTH + 6
-const MIN_DEFAULT_POS_Y = 16
+const MIN_DEFAULT_POS_Y = 24
 const MAX_DEFAULT_POS_Y = 32
 const MIN_SPEED_X = K.SPEED_X * 1.2
 const MAX_SPEED_X = K.SPEED_X * 2
