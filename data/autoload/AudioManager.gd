@@ -29,8 +29,7 @@ func is_playing_music() -> bool:
 
 
 func set_music_pitch(pitch: float) -> void:
-	# _music.pitch_scale = pitch
-	pass
+	_music.pitch_scale = pitch
 
 
 func set_music_seek(seek: float) -> void:

@@ -65,7 +65,9 @@ func _update_marker(dt):
 
 
 func _update_bgm():
-	AudioManager.set_music_pitch((G.factor - K.BGM_DEFAULT_PITCH_SCALE) * K.BGM_FACTOR)
+	AudioManager.set_music_pitch(
+		(G.factor - K.BGM_DEFAULT_PITCH_SCALE) * K.BGM_FACTOR + K.BGM_DEFAULT_PITCH_SCALE
+	)
 
 
 func _ready_game():
