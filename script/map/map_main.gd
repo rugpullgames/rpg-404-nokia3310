@@ -9,11 +9,11 @@ extends Node
 const SPEED_X = K.SPEED_X
 const SCORE_FACTOR: float = 1.0 / 8
 const PLAYER_DEFAULT_POS_X = 15
+const BGM_MOZART: AudioStream = preload("res://audio/bgm/mozart_triangle_wave.wav")
 
 # node
 onready var GameNode: Node2D = $Game
 onready var ScoreMarker: Node2D = $Game/ScoreMarker
-onready var BGM: AudioStreamPlayer2D = $BGM
 onready var Floors: Node2D = $Game/Floors
 onready var player: KinematicBody2D = $Game/Player
 
@@ -65,10 +65,7 @@ func _update_marker(dt):
 
 
 func _update_bgm():
-	BGM.pitch_scale = (
-		(G.factor - K.BGM_DEFAULT_PITCH_SCALE) * K.BGM_FACTOR
-		+ K.BGM_DEFAULT_PITCH_SCALE
-	)
+	AudioManager.set_music_pitch((G.factor - K.BGM_DEFAULT_PITCH_SCALE) * K.BGM_FACTOR)
 
 
 func _ready_game():
@@ -79,16 +76,17 @@ func _ready_game():
 	ScoreMarker.position.x = 0
 	G.factor = 1
 	G.score = 0
-	BGM.pitch_scale = K.BGM_DEFAULT_PITCH_SCALE
+	# AudioManager.set_music_pitch(K.BGM_DEFAULT_PITCH_SCALE)
 	G.game_state = K.GameState.READY
 	print("Game Ready")
 
 
 func _run_game():
 	GameNode.visible = true
-	BGM.seek(0)
+	AudioManager.set_music_seek(0)
 	if G.bgm_audio:
-		BGM.play()
+		AudioManager.play_music(BGM_MOZART)
+		print("Play Mozart")
 	G.game_state = K.GameState.RUNNING
 	print("Game Start")
 
@@ -96,6 +94,6 @@ func _run_game():
 func _end_game():
 	G.game_state = K.GameState.END
 	GameNode.visible = false
-	BGM.stop()
+	AudioManager.stop_music()
 	Floors.visible = false
 	print("Game Over")

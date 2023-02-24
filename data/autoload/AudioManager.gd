@@ -20,12 +20,21 @@ func play_music(music_stream: AudioStream) -> void:
 	_music.play()
 
 
+func stop_music() -> void:
+	_music.stop()
+
+
 func is_playing_music() -> bool:
 	return _music.playing
 
 
-func stop_music() -> void:
-	_music.stop()
+func set_music_pitch(pitch: float) -> void:
+	# _music.pitch_scale = pitch
+	pass
+
+
+func set_music_seek(seek: float) -> void:
+	_music.seek(seek)
 
 
 func play_sfx(sfx_stream: AudioStream) -> void:
